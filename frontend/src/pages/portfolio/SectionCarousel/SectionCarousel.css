@@ -1,0 +1,81 @@
+.carouselArrowButton {
+    width: 70px;
+    height: 70px;
+    color: var(--color-dark-2);
+}
+
+.sectionCarouselBase {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: clamp(80vw, 1240px, 90vw);
+}
+
+.container {
+    position: relative; /* Establishes positioning context */
+    transform-box: content-box;
+    margin: 10px 30px 0 30px;
+    width: clamp(680px, 1075px, 1075px);
+    height: 420px;
+}
+
+.card {
+    position: absolute;
+    border-radius: 12px;
+    aspect-ratio: 13 / 8;
+    top: 50%;
+    left: 50%;
+}
+
+.info {
+    transform: translate(-50%, -50%);
+    z-index: 7;
+}
+
+.buffer {
+    background-color: var(--color-dark-2);
+    width: 500px;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+
+.edgeCard {
+    background-color: var(--color-dark-2);
+    width: 550px;
+    z-index: 4;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.leftEdge {
+    transform: translate(-50%, -50%) translateX(-50%);
+
+}
+
+.rightEdge {
+    transform: translate(-50%, -50%) translateX(50%)
+}
+
+.middleCard {
+    background-color: var(--color-medium-1);
+    width: 600px;
+    z-index: 6;
+    box-shadow: 0 0 7px rgba(0,0,0,0.5);
+}
+
+.leftMiddle {
+    transform: translate(-50%, -50%) translateX(-25%);
+}
+
+.rightMiddle {
+    transform: translate(-50%, -50%) translateX(25%);
+}
+
+
+.frontCard {
+    background-color: var(--color-light-2);
+    width: 650px;
+    z-index: 8;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,85 @@
+.portfolioModal {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    border-radius: 12px;
+    top: 54%;
+    left: 50%;
+    background-color: var(--color-light-2);
+    height: 80%;
+    width: 70%;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+}
+
+.portfolioScrollWindow {
+    display: flex;
+    margin-top: 20px;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* width */
+.portfolioScrollWindow::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.portfolioScrollWindow::-webkit-scrollbar-track {
+  background: var(--color-light-2);
+}
+
+/* Handle */
+.portfolioScrollWindow::-webkit-scrollbar-thumb {
+  background: var(--color-dark-2);
+}
+
+/* Handle on hover */
+.portfolioScrollWindow::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-1);
+}
+
+.modalImg {
+    display: flex;
+    width: 50%;
+    aspect-ratio: 16/9;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalTitle {
+    font-family: Squada-one;
+    margin: 15px;
+    font-size: 56px;
+    color: var(--color-dark-1);
+}
+
+.modalDatesTech {
+    font-family: Squada-one;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 42px;
+    color: var(--color-dark-1);
+}
+
+.modalText {
+    font-family: Klima-regular;
+    font-size: 22px;
+    color: var(--color-dark-1);
+}
+
+.backButton {
+    font-family: Klima-bold;
+    font-size: 28px;
+    color: var(--color-dark-1);
+    margin: 0;
+    padding: 10px 20px;
+    background: #00000000;
+}
