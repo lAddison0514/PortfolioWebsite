@@ -2,12 +2,28 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import netlify from "@netlify/vite-plugin";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), netlify()],
+  plugins: [react()],
   server: {
     headers: {
-      'Content-Type': 'application/javascript'
+      'Content-Type': 'application/javascript',
+      'X-Content-Type-Options': 'nosniff' // Add this security header
+    },
+    fs: {
+      strict: true // Ensure proper file serving
+    }
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'], // Add TypeScript extensions
+    alias: {
+      '@': '/src' // Add path alias if needed
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]' // Ensure proper asset naming
+      }
     }
   }
 })
