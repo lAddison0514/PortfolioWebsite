@@ -8,6 +8,8 @@
   [headers.values]
     Content-Type = "application/javascript"
     X-Content-Type-Options = "nosniff"
+
+[[headers]]
   for = "/*.jsx"
   [headers.values]
     Content-Type = "application/javascript"
