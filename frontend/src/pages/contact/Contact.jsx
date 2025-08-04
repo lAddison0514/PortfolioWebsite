@@ -19,7 +19,7 @@ const Contact = () => {
             email: email.value,
             message: message.value,
         };
-        let response = await fetch("https://3.141.36.120/contact", {
+        let response = await fetch("http://3.141.36.120/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
