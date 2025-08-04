@@ -1,6 +1,6 @@
 import "./SectionCarousel.css"
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
-import FrontCardInfo from "./FrontCardInfo.jsx";
+import FrontCardInfo from "./FrontCardInfo";
 import {useEffect, useRef, useState} from "react";
 import {motion, useMotionValueEvent, useScroll} from "motion/react";
 

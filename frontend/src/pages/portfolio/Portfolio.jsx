@@ -1,9 +1,9 @@
 import "./Portfolio.css"
 
-import PageTopper from "../../components/PageTopper/PageTopper.jsx";
-import SectionHeader from "./SectionHeader/SectionHeader.jsx";
-import SectionCarousel from "./SectionCarousel/SectionCarousel.jsx";
-import PortfolioModal from "./PortfolioModal/PortfolioModal.jsx";
+import PageTopper from "../../components/PageTopper/PageTopper";
+import SectionHeader from "./SectionHeader/SectionHeader";
+import SectionCarousel from "./SectionCarousel/SectionCarousel";
+import PortfolioModal from "./PortfolioModal/PortfolioModal";
 import {PortfolioMap} from "./PortfolioInfoMap.js"
 import {PORTFOLIO_MORE_INFO_MAP} from "./PortfolioMoreInfo.js";
 import {EXPERIENCE_SECTION, GAMES_SECTION, ENGINE_RENDERING_SECTION, MODELING_SECTION, WEB_DEV_SECTION} from "./PortfolioCardInfo.js";

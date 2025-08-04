@@ -1,4 +1,4 @@
-import {Nav, NavBuffer, NavLink, NavList, NavMenu} from "./NavbarElements.jsx";
+import {Nav, NavBuffer, NavLink, NavList, NavMenu} from "./NavbarElements";
 
 const Navbar = () => {
     return (

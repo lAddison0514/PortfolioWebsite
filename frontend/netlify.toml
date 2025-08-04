@@ -12,4 +12,10 @@
 [[headers]]
   for = "/*.jsx"
   [headers.values]
-    Content-Type = "application/wasm"
+    Content-Type = "application/javascript"
+
+[[headers]]
+  for = "/assets/*.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    X-Content-Type-Options = "nosniff"

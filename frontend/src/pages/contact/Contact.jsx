@@ -1,6 +1,6 @@
 import "./Contact.css"
 
-import PageTopper from "../../components/PageTopper/PageTopper.jsx";
+import PageTopper from "../../components/PageTopper/PageTopper";
 import {useState} from "react";
 import { FaLinkedin } from 'react-icons/fa';
 
