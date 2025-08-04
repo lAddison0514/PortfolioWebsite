@@ -3,10 +3,9 @@ import react from '@vitejs/plugin-react'
 import netlify from "@netlify/vite-plugin";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), netlify()],
   server: {
     headers: {
-      'Content-Type': 'application/javascript',
       'X-Content-Type-Options': 'nosniff' // Add this security header
     },
     fs: {
