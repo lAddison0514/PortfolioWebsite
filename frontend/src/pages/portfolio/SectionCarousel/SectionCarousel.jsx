@@ -4,7 +4,7 @@ import FrontCardInfo from "./FrontCardInfo";
 import {useEffect, useRef, useState} from "react";
 import {motion, useMotionValueEvent, useScroll} from "motion/react";
 
-const ROTATE_TIME = 0.6;
+const ROTATE_TIME = 0.4;
 
 const SectionCarousel = ({sectionInfo, openModal}) => {
     const[infoIdx, setInfoIdx] = useState(0);

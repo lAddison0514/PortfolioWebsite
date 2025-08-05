@@ -23,8 +23,8 @@ export const PortfolioMap = [
         SectionTitle: "Web Development",
         Info: WEB_DEV_SECTION,
     },
-    {
+    /*{
         SectionTitle: "Modeling",
         Info: MODELING_SECTION,
-    }
+    }*/
 ]

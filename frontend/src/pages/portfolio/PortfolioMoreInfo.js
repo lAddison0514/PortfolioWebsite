@@ -73,24 +73,24 @@ export const PORTFOLIO_MORE_INFO_MAP = {
     },
     "tale_of_toe" : {
         title: "Tale of Toe",
-        isImg: true,
-        contentPath: "imgs/portfolio/tale_of_toe_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/TaleofToeDemo.mp4",
         dates: "Jan 2023 - Mar 2023",
         techUsed: "Unity",
         content: "The Tale of Toe is a mobile RPG with Tic-Tac-Toe inspired combat. This was a prototype I developed in Unity as part of a pitch to USC's Advanced Games Project program. The game was unfortunately not greenlit, but it was an incredible learning experience that taught me a lot about the game architecture of rpgs and the nuances of developing for mobile verses PC."
     },
     "networked_ue5" : {
         title: "Networked UE5 FPS",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/NetworkedUE5.mp4",
         dates: "Oct 2022 - Dec 2022",
         techUsed: "UE5",
         content: "Using the UE5 First Person template as a base, I implemented various features including a chat system, tags players can place around the world that are saved metadata, and multiplayer using the Steam Developer API that allows it to connect to other Steam clients."
     },
     "artist_block" : {
         title: "Artist Block",
-        isImg: true,
-        contentPath: "imgs/portfolio/artist_block_16_9.png",
+        isImg: false,
+        contentPath: "videos/ArtistBlockDemo.mp4",
         dates: "Jan 2022 - May 2022",
         techUsed: "Unity",
         content: `Artist Block is a game I developed with artist and producer Amanda Sharkey in collaboration with Berklee College of Music. I handled all in-engine implementation including gameplay, audio, UI, serialization, and telemetry.`
@@ -98,56 +98,56 @@ export const PORTFOLIO_MORE_INFO_MAP = {
 
     "pbd_physics_sim" : {
         title: "PBD Physics Sim",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/PBDExploration.mp4",
         dates: "May 2025",
         techUsed: "Unity",
         content: "I am implementing the 2006 paper Position Based Dynamics in Unity. I have a physical representation of cloth, sphere & plane collisions, friction, and user interaction. I am currently exploring optimization through compute shaders and Unity's DOTS system."
     },
     "ik_demo" : {
         title: "IK Demo",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/IKProject.mp4",
         dates: "April 2024",
         techUsed: "OpenGL, C++",
         content: "With a mesh, skeleton, and skinning weights provided. The character is skinned and animated using IK. Different techniques are compared including Tikhonov regularization and the pseudo-inverse method."
     },
     "mocap_interpolation" : {
         title: "Mocap Interpolation",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/MocapExample.mp4",
         dates: "February 2024",
         techUsed: "OpenGL, C++",
         content: "I implemented and analyzed linear and Bezier interpolation methods on both Euler angles and quaternions and expanded on the software used to visualize it adding new camera and rendering functionality."
     },
     "jello_cube" : {
         title: "Jello Cube Mass Spring System",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/JelloCubeGIF.mp4",
         dates: "April 2023",
         techUsed: "OpenGL, C++",
         content: "This simulation of a mass spring system simulates an interactive cube of Jello bouncing around various boundaries. It reacts to a user dragging it around the space, gravity, surface friction, and bounces off the walls of the active bounds. Rendered in Open GL."
     },
     "prime_engine" : {
         title: "Prime Engine Development",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/PrimeEngineDemo.mp4",
         dates: "Aug 2023 - Dec 2023",
         techUsed: "C++, Python, Lua, Maya, DirectX",
         content: "Using Prime Engine, a game engine developed by Artem Kovalovs, I implemented various features including culling, physics, and a UI editor based on Unity's uGUI system that allows users to place buttons, images, & text in the world and hook them to Lua functions. "
     },
     "custom_engine" : {
         title: "Custom Engine & Deferred Lighting",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/DirectXEngine.mp4",
         dates: "Jan 2023 - May 2023",
         techUsed: "C++, DirectX",
         content: "Using DirectX11 and hlsl, I created a multithreaded game engine supporting features including collision detection, physics, level loading, profiling, and support for various shaders."
     },
     "raycast_renderer" : {
         title: "Raycast Renderer",
-        isImg: true,
-        contentPath: "imgs/portfolio/temp_logo_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/RayTracingRendererDemo.mp4",
         dates: "November 2022",
         techUsed: "C++",
         content: "With OpenGL and C++ I created a simple raycast engine that can render scenes with triangles, spheres, and point lights and can handle shadows and reflections."
@@ -163,8 +163,8 @@ export const PORTFOLIO_MORE_INFO_MAP = {
     },
     "uscheduler" : {
         title: "USCheduler",
-        isImg: true,
-        contentPath: "imgs/portfolio/uscheduler_16_9.jpg",
+        isImg: false,
+        contentPath: "videos/201WebsiteDemo.mp4",
         dates: "Feb 2023 - Apr 2023",
         techUsed: "Java, ...",
         content: "USCheduler is a website scheduling application I developed with other students. I designed and created the entire front end using HTML, CSS, and JavaScript. I also integrated it with a backend written in Java by other members of the team."

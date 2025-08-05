@@ -49,15 +49,15 @@ const backdropVariant = {
     closed: {
         height: "0vh",
         transition: {
-            duration: 0.5,
+            duration: 0.35,
             transitionBehavior: easeIn
         }
     },
     open: {
         height: "100vh",
         transition: {
-            duration: 0.5,
-            transitionBehavior: easeOut
+            duration: 0.30,
+            transitionBehavior: easeIn
         }
     }
 }

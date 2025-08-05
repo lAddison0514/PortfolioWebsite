@@ -35,7 +35,7 @@ export const GAMES_SECTION = [
     {
         title: "Networked UE5 FPS",
         dates: "Oct 2022 - Dec 2022",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/networked_ue5_16_9.png",
         moreInfoID: "networked_ue5"
     },
     {
@@ -50,43 +50,43 @@ export const ENGINE_RENDERING_SECTION = [
     {
         title: "PBD Physics Sim",
         dates: "May 2025",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/pbd_exploration_16_9.png",
         moreInfoID: "pbd_physics_sim"
     },
     {
         title: "IK Demo",
         dates: "April 2024",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/ik_demo_16_9.png",
         moreInfoID: "ik_demo"
     },
     {
         title: "Mocap Interpolation",
         dates: "February 2024",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/mocap_16_9.png",
         moreInfoID: "mocap_interpolation"
     },
     {
         title: "Jello Cube Mass Spring System",
         dates: "April 2023",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/jello_cube_16_9.jpg",
         moreInfoID: "jello_cube"
     },
     {
         title: "Prime Engine Development",
         dates: "Aug 2023 - Dec 2023",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/prime_engine_16_9.png",
         moreInfoID: "prime_engine"
     },
     {
         title: "Custom Engine & Deferred Lighting",
         dates: "Jan 2023 - May 2023",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/custom_engine_16_9.jpg",
         moreInfoID: "custom_engine"
     },
     {
         title: "Raycast Renderer",
         dates: "November 2022",
-        imgLocation: "",
+        imgLocation: "imgs/portfolio/raytrace_16_9.png",
         moreInfoID: "raycast_renderer"
     },
 ]

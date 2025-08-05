@@ -2,6 +2,7 @@ import "./PortfolioModal.css"
 
 import {motion} from "motion/react";
 import {easeOut} from "framer-motion";
+import ModalVideoPlayer from "./ModalVideoPlayer.jsx";
 
 const PortfolioModal = ({modalOpen, backClicked, infoStruct}) => {
     return (
@@ -9,7 +10,11 @@ const PortfolioModal = ({modalOpen, backClicked, infoStruct}) => {
             <motion.div variants={modalInfoVariants} style={{display: "flex", flexDirection: "column", alignItems: "center", overflow: "hidden", width: "100%", height: "100%"}}>
                 <div className="portfolioScrollWindow">
                     <h1 className="modalTitle">{infoStruct.title}</h1>
-                    <img className={"modalImg"} src={`../../../../${infoStruct.contentPath}`} alt="" />
+                    {infoStruct.isImg ?
+                        <img className={"modalImg"} src={`${infoStruct.contentPath}`} alt="" />
+                        :
+                        <ModalVideoPlayer videoSource={`${infoStruct.contentPath}`} />
+                    }
                     <h1 className="modalDatesTech">{infoStruct.dates} | Tech: {infoStruct.techUsed}</h1>
                     <p className={"modalText"}>
                         {infoStruct.content}
@@ -33,11 +38,13 @@ const modalVariant = {
         transition: {
             default: {
                 duration: 0.4,
-                transitionBehavior: easeOut
+                transitionBehavior: easeOut,
+                type: "spring",
+                bounce: 0.2,
             },
             opacity: {
                 duration: 0.1,
-                delay: 0.4,
+                delay: 0.3,
                 transitionBehavior: easeOut,
             }
         }
@@ -52,7 +59,9 @@ const modalVariant = {
             default: {
                 duration: 0.4,
                 delay: 0.1,
-                transitionBehavior: easeOut
+                transitionBehavior: easeOut,
+                type: "spring",
+                bounce: 0.4,
             },
             opacity: {
                 duration: 0.1,
@@ -73,8 +82,8 @@ const modalInfoVariants = {
     open: {
         opacity: 1,
         transition: {
-            duration: 0.1,
-            delay: 0.4,
+            duration: 0.075,
+            delay: 0.3,
             transitionBehavior: easeOut
         }
     }
