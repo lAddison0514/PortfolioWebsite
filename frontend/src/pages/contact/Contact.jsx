@@ -29,9 +29,6 @@ const Contact = () => {
 
         let response = await fetch('/.netlify/functions/sendEmail', {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
             body: JSON.stringify(details)
         }).catch(error => console.log(error));
 

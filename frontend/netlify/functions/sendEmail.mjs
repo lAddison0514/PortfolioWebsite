@@ -56,7 +56,7 @@ contactEmail.verify((error) => {
   });
 });*/
 
-exports.handler = async function (event, context) {
+export default (event, context) => {
     const name = event.body.name;
     const email = event.body.email;
     const message = event.body.message;
