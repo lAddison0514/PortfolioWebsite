@@ -75,7 +75,7 @@
 
 .modalText {
     font-family: Klima-regular;
-    font-size: clamp(12px, 3vw, 22px);
+    font-size: clamp(16px, 3vw, 22px);
     color: var(--color-dark-1);
 }
 

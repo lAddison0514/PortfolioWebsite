@@ -1,9 +1,13 @@
-.headerSendMessage {
+.contactHeader {
+    font-size: clamp(36px, 6vw, 52px);
+}
+
+.sendMessage {
     margin-top: 35px;
     margin-bottom: 10px;
 }
 
-.headerContactHere {
+.contactHere {
     margin-top: 15px;
     margin-bottom: 0px;
 }
@@ -13,7 +17,11 @@
     flex-direction: row;
     align-items: center;
     font-family: Klima-regular;
-    font-size: 24px;
+    font-size: clamp(20px, 2.5vw, 24px);
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+    }
 }
 
 .formBGdiv {
@@ -24,6 +32,11 @@
     border-radius: 12px;
     width: 50vw;
     height: 425px;
+
+    @media (max-width: 750px) {
+        width: 80vw;
+        height: 350px;
+    }
 }
 
 .contactForm {
@@ -37,7 +50,7 @@
 
 .formInput {
     font-family: Klima-regular;
-    font-size: clamp(10px, 2.5vw, 20px);
+    font-size: clamp(14px, 2.5vw, 20px);
     background-color: white;
     color: var(--color-dark-2);
     border: 0;
@@ -52,7 +65,7 @@
 }
 
 .nameEmail {
-    height: clamp( 30px, 7.5vw, 50px);
+    height: clamp( 35px, 7.5vw, 50px);
 }
 
 .message {
@@ -70,6 +83,10 @@
     color: white;
     width: 30%;
     height: 50px;
+    @media (max-width: 750px) {
+        width: 40%;
+        height: 35px;
+    }
 }
 
 .submitButton:hover {

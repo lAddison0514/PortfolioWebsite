@@ -34,10 +34,10 @@ const Contact = () => {
     };
     return  (
         <div>
-            <div style={{display: "flex", marginTop: "70px", flexDirection: "column", alignItems: "center" }}>
+            <div style={{display: "flex", marginTop: "70px", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
                 <PageTopper srcImage={"../../../imgs/Addison-Pillars.jpg"} title={"CONTACT"} imgPos={18} />
 
-                <h1 className={"headerSendMessage"}>Send a message!</h1>
+                <h1 className={"contactHeader sendMessage"}>Send a message!</h1>
 
                 <div className={"formBGdiv"}>
                     <form id="contactForm" className={"contactForm"} onSubmit={handleSubmit}>
@@ -54,7 +54,7 @@ const Contact = () => {
                     </form>
                 </div>
 
-                <h1 className={"headerContactHere"}>Or contact me here!</h1>
+                <h1 className={"contactHeader contactHere"}>Or contact me here!</h1>
 
                 <div className={"contactInfoDiv"}>
                     <p style={{margin: "4px 10px"}}>Tel. (616) 745-1580 | addisonslouis@gmail.com | </p>
