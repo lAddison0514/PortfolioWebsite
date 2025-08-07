@@ -17,7 +17,6 @@ export const NavLink = styled(Link)`
     color: var(--perma-light-1);
     display: flex;
     font-family: Squada-one;
-    font-size: 35px;
     text-decoration: none;
     //margin-left: 20px;
     cursor: pointer;
@@ -40,18 +39,18 @@ export const NavBuffer = styled.li`
     color: var(--perma-light-1);
     display: flex;
     font-family: Squada-one;
-    font-size: 35px;
     margin-right: 10px;
     margin-left: 10px;
 `
 
 export const NavMenu = styled.div`
     width: 100%;
-    margin-right: 45px;
+    margin-right: 2%;
     display: flex;
+    font-size: 35px;
     justify-content: right;
     align-items: center;
     @media screen and (max-width: 430px) {
-        display: none;
+       font-size: 7vw;
     }
 `;

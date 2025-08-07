@@ -10,10 +10,18 @@ const PortfolioModal = ({modalOpen, backClicked, infoStruct}) => {
             <motion.div variants={modalInfoVariants} style={{display: "flex", flexDirection: "column", alignItems: "center", overflow: "hidden", width: "100%", height: "100%"}}>
                 <div className="portfolioScrollWindow">
                     <h1 className="modalTitle">{infoStruct.title}</h1>
-                    {infoStruct.isImg ?
-                        <img className={"modalImg"} src={`${infoStruct.contentPath}`} alt="" />
+                    { infoStruct.useYoutubeVideo ?
+                        <iframe
+                            className="modalImg"
+                            loading="lazy"
+                            src={`https://www.youtube.com/embed/${infoStruct.contentPath}`}
+                        />
                         :
-                        <ModalVideoPlayer videoSource={`${infoStruct.contentPath}`} />
+                        ( infoStruct.isImg ?
+                            <img className={"modalImg"} src={`${infoStruct.contentPath}`} alt="" />
+                            :
+                            <ModalVideoPlayer videoSource={`${infoStruct.contentPath}`} />
+                        )
                     }
                     <h1 className="modalDatesTech">{infoStruct.dates} | Tech: {infoStruct.techUsed}</h1>
                     <p className={"modalText"}>

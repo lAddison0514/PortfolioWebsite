@@ -24,8 +24,9 @@ export const PORTFOLIO_MORE_INFO_MAP = {
     },
     "bugnauts_kickback" : {
         title: "Kickback Games (Unofficial Title)",
+        useYoutubeVideo: true,
         isImg: true,
-        contentPath: "imgs/portfolio/bugnauts_kickback_16_9.jpg",
+        contentPath: "T95dlP8smrM",//"imgs/portfolio/bugnauts_kickback_16_9.jpg",
         dates: "Aug 2024 - May 2025",
         techUsed: "UE5, Perforce",
         content: "After Bugnauts was released as a demo through USC's Advanced Games Program, the Creative Director was contacted by an indie studio with the suggestion that we should pitch the game to them after putting in some work to redevelop it. We decided to take the opportunity to completely re-image what Bugnauts could be and rebuild it nearly from the ground up.\n" +
@@ -73,8 +74,9 @@ export const PORTFOLIO_MORE_INFO_MAP = {
     },
     "tale_of_toe" : {
         title: "Tale of Toe",
+        useYoutubeVideo:  true,
         isImg: false,
-        contentPath: "videos/TaleofToeDemo.mp4",
+        contentPath: "-4G7-YRledI",//"videos/TaleofToeDemo.mp4",
         dates: "Jan 2023 - Mar 2023",
         techUsed: "Unity",
         content: "The Tale of Toe is a mobile RPG with Tic-Tac-Toe inspired combat. This was a prototype I developed in Unity as part of a pitch to USC's Advanced Games Project program. The game was unfortunately not greenlit, but it was an incredible learning experience that taught me a lot about the game architecture of rpgs and the nuances of developing for mobile verses PC."

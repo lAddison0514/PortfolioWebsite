@@ -10,11 +10,26 @@ import {EXPERIENCE_SECTION, GAMES_SECTION, ENGINE_RENDERING_SECTION, MODELING_SE
 import {AnimatePresence, easeIn, easeOut} from "framer-motion";
 
 import {motion} from "motion/react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import SectionExpanded from "./SectionExpanded/SectionExpanded.jsx";
 
 const Portfolio = () => {
     const [modalOpen, setModalOpen] = useState("closed");
     const [modalInfoID, setModalInfoID] = useState("ID");
+
+    const [forceExpand, setForceExpand] = useState(false);
+
+    useEffect(() => {
+    const checkScreenSize = () => {
+      setForceExpand(window.matchMedia('(max-width: 1350px)').matches);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
 
     const openModal = (infoID) => {
         setModalInfoID(infoID);
@@ -34,12 +49,25 @@ const Portfolio = () => {
                 }
             </AnimatePresence>
 
-            {PortfolioMap.map(section => (
-                <div key={section.SectionTitle}>
-                    <SectionHeader title={section.SectionTitle} />
-                    <SectionCarousel sectionInfo={section.Info} openModal={openModal}/>
-                </div>
-            ))}
+            {forceExpand ?
+                (
+                    PortfolioMap.map(section => (
+                        <div key={section.SectionTitle}>
+                            <SectionHeader title={section.SectionTitle} />
+                            <SectionExpanded sectionInfo={section.Info} openModal={openModal} />
+                        </div>
+                    ))
+                )
+                :
+                (
+                    PortfolioMap.map(section => (
+                        <div key={section.SectionTitle}>
+                            <SectionHeader title={section.SectionTitle} />
+                            <SectionCarousel sectionInfo={section.Info} openModal={openModal}/>
+                        </div>
+                    ))
+                )
+            }
         </div>
 
     )

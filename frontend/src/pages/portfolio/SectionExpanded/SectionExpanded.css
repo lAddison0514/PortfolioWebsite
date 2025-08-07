@@ -1,0 +1,27 @@
+.expandedSectionBase {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: clamp(80vw, 1240px, 90vw);
+}
+
+.cardContainer {
+    display: flex;
+    width: clamp(400px, 50%, 50%);
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.expandedCard {
+    display: flex;
+    border-radius: 12px;
+    aspect-ratio: 13 / 8;
+    background-color: var(--color-light-2);
+    width: 85%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+

@@ -175,7 +175,8 @@ const SectionCarousel = ({sectionInfo, openModal}) => {
                         zIndex: midLZ,
                         transform: `translate(-50%, -50%) translateX(calc(-25% * ${cardSpread}))`
                     }} variants={midLeftVariant} />
-                    <motion.div ref={cardRef} className="card frontCard" style={{zIndex: frontZ}} variants={frontVariant} />
+                    <motion.div ref={cardRef} className="card frontCard" style={{zIndex: frontZ}} variants={frontVariant}>
+                    </motion.div>
                     <motion.div className="card middleCard rightMiddle" style={{
                         zIndex: midRZ,
                         transform: `translate(-50%, -50%) translateX(calc(25% * ${cardSpread}))`
@@ -186,8 +187,8 @@ const SectionCarousel = ({sectionInfo, openModal}) => {
                     }} variants={backRightVariant} />
 
                     <motion.div className="card buffer" variants={bufferCardVariant} />
-
                     <FrontCardInfo class="card info" cardInfo={sectionInfo[infoIdx]} animState={rotateState} infoVariants={frontInfoVariants} openModal={onMoreClicked} />
+
 
                 </motion.div>
                 <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={() =>rotateRight()}>
