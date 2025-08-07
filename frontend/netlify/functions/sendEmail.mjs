@@ -70,16 +70,14 @@ exports.handler = async function (event, context) {
     };
     contactEmail.sendMail(mail, (error) => {
         if (error) {
-            return {
-                statusCode: 500,
-                status: "ERROR",
-            }
+             return new Response(error.toString(), {
+                status: 500,
+            })
             //res.json({status: "ERROR"});
         } else {
-            return {
-                statusCode: 200,
-                status: "Message Sent",
-            }
+            return new Response("Message sent", {
+                status: 200,
+            });
             //res.json({ status: "Message Sent" });
         }
     });
