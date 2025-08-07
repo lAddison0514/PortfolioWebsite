@@ -53,12 +53,15 @@
     justify-content: center;
     align-items: center;
     border: none;
+    @media (max-width: 750px) {
+        width: 100%;
+    }
 }
 
 .modalTitle {
     font-family: Squada-one;
     margin: 15px;
-    font-size: 56px;
+    font-size: clamp(32px, 8vw, 56px);
     color: var(--color-dark-1);
 }
 
@@ -66,13 +69,13 @@
     font-family: Squada-one;
     margin-top: 15px;
     margin-bottom: 0;
-    font-size: 42px;
+    font-size: clamp(24px, 6vw,42px);
     color: var(--color-dark-1);
 }
 
 .modalText {
     font-family: Klima-regular;
-    font-size: 22px;
+    font-size: clamp(12px, 3vw, 22px);
     color: var(--color-dark-1);
 }
 

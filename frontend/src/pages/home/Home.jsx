@@ -26,7 +26,8 @@ const Home = () => {
                     <Link className="seePortfolio" to="/portfolio">SEE PORTFOLIO {">"}</Link>
                 </motion.div>
             </div>
-            <div>
+
+            <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
                 <img className="homeImg" src="../../../imgs/Addison-Kaufman.jpg" />
             </div>
 

@@ -32,11 +32,12 @@
     z-index: 20;
 }
 
-.moreButton {
+.expandButton {
     font-family: Klima-bold;
-    font-size: 28px;
+    font-size: 32px;
     color: var(--color-dark-1);
     margin: 0;
-    padding: 10px 20px;
+    padding-top: 10px;
+    cursor: pointer;
     background: #00000000;
 }

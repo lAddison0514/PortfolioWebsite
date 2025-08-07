@@ -22,7 +22,7 @@
     align-items: center;
     background-color: var(--perma-dark-2);
     border-radius: 12px;
-    width: clamp(800px, 50vw, 50vw);
+    width: 50vw;
     height: 425px;
 }
 
@@ -37,7 +37,7 @@
 
 .formInput {
     font-family: Klima-regular;
-    font-size: 20px;
+    font-size: clamp(10px, 2.5vw, 20px);
     background-color: white;
     color: var(--color-dark-2);
     border: 0;
@@ -52,7 +52,7 @@
 }
 
 .nameEmail {
-    height: 50px;
+    height: clamp( 30px, 7.5vw, 50px);
 }
 
 .message {
@@ -65,7 +65,7 @@
     justify-content: center;
     align-items: center;
     font-family: Klima-bold;
-    font-size: 24px;
+    font-size: clamp(12px, 3vw, 24px);
     background-color: var(--color-medium-1);
     color: white;
     width: 30%;

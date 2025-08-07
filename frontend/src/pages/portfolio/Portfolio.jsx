@@ -10,32 +10,60 @@ import {EXPERIENCE_SECTION, GAMES_SECTION, ENGINE_RENDERING_SECTION, MODELING_SE
 import {AnimatePresence, easeIn, easeOut} from "framer-motion";
 
 import {motion} from "motion/react";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import SectionExpanded from "./SectionExpanded/SectionExpanded.jsx";
+import ExpandButton from "./SectionCarousel/ExpandButton.jsx";
 
 const Portfolio = () => {
     const [modalOpen, setModalOpen] = useState("closed");
     const [modalInfoID, setModalInfoID] = useState("ID");
 
+    // Manage forced swap between section types
     const [forceExpand, setForceExpand] = useState(false);
 
     useEffect(() => {
-    const checkScreenSize = () => {
-      setForceExpand(window.matchMedia('(max-width: 1350px)').matches);
-    };
+        const checkScreenSize = () => {
+          setForceExpand(window.matchMedia('(max-width: 1350px)').matches);
+        };
 
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
 
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+    // EoS
 
+    // Manage manual swap between section types
+    const [sectionsExpanded, setSectionsExpanded] = useState([]);
+    const hasRun = useRef(false);
+
+    useEffect(() => {
+        if(!hasRun.current) {
+            var temp = []
+            PortfolioMap.map(() => (
+                temp.push(false)
+            ))
+            setSectionsExpanded(temp);
+            hasRun.current = true;
+        }
+    }, [hasRun, sectionsExpanded]);
+
+    const setExpandedBool = (idx, newVal) => {
+        setSectionsExpanded(sectionsExpanded.map((item, i) => (i === idx ? newVal : item)));
+    }
+    // EoS
 
     const openModal = (infoID) => {
+        document.body.style.overflow = "hidden";
+
         setModalInfoID(infoID);
         setModalOpen("open");
     }
-    const closeModal = () => setModalOpen("closed");
+    const closeModal = () => {
+        document.body.style.overflow = "";
+
+        setModalOpen("closed");
+    }
 
     return  (
         <div style={{display: "flex", flexDirection: "column", textAlign: "center", marginTop: "70px"}}>
@@ -60,10 +88,15 @@ const Portfolio = () => {
                 )
                 :
                 (
-                    PortfolioMap.map(section => (
+                    PortfolioMap.map((section, i) => (
                         <div key={section.SectionTitle}>
                             <SectionHeader title={section.SectionTitle} />
-                            <SectionCarousel sectionInfo={section.Info} openModal={openModal}/>
+                            { sectionsExpanded[i] ?
+                                <SectionExpanded sectionInfo={section.Info} openModal={openModal} />
+                                :
+                                <SectionCarousel sectionInfo={section.Info} openModal={openModal}/>
+                            }
+                            <ExpandButton ctrlIdx={i} shouldExpand={setExpandedBool} currentState={sectionsExpanded[i]}/>
                         </div>
                     ))
                 )

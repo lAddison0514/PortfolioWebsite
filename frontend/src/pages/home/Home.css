@@ -45,3 +45,10 @@
         color: color-mix(in srgb, var(--color-medium-2), var(--color-dark-2), 50%);
     }
 }
+
+.homeBG {
+    background-image: url("imgs/Addison-Kaufman.jpg");
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-color: #1a1a1a;
+}
