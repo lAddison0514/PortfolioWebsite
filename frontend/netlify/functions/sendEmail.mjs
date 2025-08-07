@@ -1,3 +1,17 @@
+// Docs on request and context https://docs.netlify.com/functions/build/#code-your-function-2
+/*export default (request, context) => {
+  try {
+    const url = new URL(request.url)
+    const subject = url.searchParams.get('name') || 'World'
+
+    return new Response(`Hello ${subject}`)
+  } catch (error) {
+    return new Response(error.toString(), {
+      status: 500,
+    })
+  }
+}*/
+
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
@@ -21,7 +35,7 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/contact", (req, res) => {
+/*router.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
@@ -40,12 +54,12 @@ router.post("/contact", (req, res) => {
       res.json({ status: "Message Sent" });
     }
   });
-});
+});*/
 
 exports.handler = async function (event, context) {
-    const name = req.body.name;
-    const email = req.body.email;
-    const message = req.body.message;
+    const name = event.body.name;
+    const email = event.body.email;
+    const message = event.body.message;
     const mail = {
         from: name,
         to: process.env.GMAIL_USER,
