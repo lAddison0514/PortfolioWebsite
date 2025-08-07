@@ -12,9 +12,6 @@
   }
 }*/
 
-const express = require("express");
-const router = express.Router();
-const cors = require("cors");
 const nodemailer = require("nodemailer");
 
 const envLoaded = require('dotenv').config({ path: [".env", "../../.env"] });
