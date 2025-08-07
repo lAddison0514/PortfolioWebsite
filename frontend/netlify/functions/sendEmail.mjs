@@ -17,15 +17,20 @@ const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-require('dotenv').config({ path: [".env", "../../.env"] });
+const envLoaded = require('dotenv').config({ path: [".env", "../../.env"] });
 
 const contactEmail = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASSWORD,
-  },
-});
+    service: 'gmail',
+    auth: envLoaded.error ? {
+            user: Netlify.env.get("GMAIL_USER"),
+            ass: Netlify.env.get("GMAIL_PASSWORD"),
+        }
+        :
+        {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASSWORD,
+        }
+    });
 
 contactEmail.verify((error) => {
   if (error) {
@@ -77,7 +82,7 @@ export default async (event, context) => {
         } else {
             return new Response("Message sent", {
                 status: 200,
-            });
+            })
             //res.json({ status: "Message Sent" });
         }
     });

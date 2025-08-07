@@ -33,8 +33,7 @@ const Contact = () => {
         }).catch(error => console.log(error));
 
         setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
+        alert(await response.status);
 
         document.getElementById("contactForm").reset();
     };
