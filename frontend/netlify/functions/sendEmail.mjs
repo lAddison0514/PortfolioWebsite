@@ -61,6 +61,7 @@ contactEmail.verify((error) => {
 
 export default async (event, context) => {
     let bodyContent;
+    console.log(event);
     if (typeof event.body === 'string') {
       // Body is already a string (common in Netlify)
       bodyContent = event.body;
