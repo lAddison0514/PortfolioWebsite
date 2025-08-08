@@ -61,7 +61,6 @@ contactEmail.verify((error) => {
 
 export default async (event, context) => {
     let bodyContent;
-    console.log(event.body);
     if (typeof event.content === 'string') {
       // Body is already a string (common in Netlify)
       bodyContent = event.body;
@@ -74,11 +73,7 @@ export default async (event, context) => {
             status: 400,
         })
     }
-    console.log(bodyContent);
-
     const eventBody = JSON.parse(bodyContent);
-
-    console.log(eventBody);
 
     const name = eventBody.name;
     const email = eventBody.email;
@@ -91,6 +86,28 @@ export default async (event, context) => {
                <p>Email: ${email}</p>
                <p>Message: ${message}</p>`,
     };
+
+    const contactEmail = nodemailer.createTransport({
+    service: 'gmail',
+    auth: !process.env.GMAIL_USER ? {
+            user: Netlify.env.get("GMAIL_USER"),
+            ass: Netlify.env.get("GMAIL_PASSWORD"),
+        }
+        :
+        {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASSWORD,
+        }
+    });
+
+    contactEmail.verify((error) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Ready to Send");
+      }
+    });
+
     contactEmail.sendMail(mail, (error) => {
         if (error) {
              return new Response(error.toString(), {
