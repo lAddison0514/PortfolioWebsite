@@ -38,6 +38,12 @@
 });*/
 
 export default async (event, context) => {
+    const dotenv = await import("dotenv");
+    dotenv.config({ path: [".env", "../../.env"] });
+
+    const userEmail = process.env.GMAIL_USER ? process.env.GMAIL_USER : Netlify.env.get("GMAIL_USER");
+    const password = process.env.GMAIL_PASSWORD ? process.env.GMAIL_PASSWORD :  Netlify.env.get("GMAIL_PASSWORD");
+
     let bodyContent;
     if (typeof event.content === 'string') {
       // Body is already a string (common in Netlify)
@@ -57,28 +63,22 @@ export default async (event, context) => {
     const email = eventBody.email;
     const message = eventBody.message;
     const mail = {
-        from: name,
-        to: process.env.GMAIL_USER,
+        from: userEmail,
+        to: userEmail,
         subject: `Contact Form Submission ${name}`,
         html: `<p>Name: ${name}</p>
                <p>Email: ${email}</p>
                <p>Message: ${message}</p>`,
     };
 
-    const dotenv = await import("dotenv");
-    dotenv.config({ path: [".env", "../../.env"] });
+
     const nodemailer = await import("nodemailer");
 
     const contactEmail = nodemailer.createTransport({
-    service: 'gmail',
-    auth: !process.env.GMAIL_USER ? {
-            user: Netlify.env.get("GMAIL_USER"),
-            ass: Netlify.env.get("GMAIL_PASSWORD"),
-        }
-        :
-        {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASSWORD,
+        service: 'gmail',
+        auth: {
+            user: userEmail,
+            pass: password,
         }
     });
 
