@@ -63,7 +63,7 @@ export default async (event, context) => {
     const email = eventBody.email;
     const message = eventBody.message;
     const mail = {
-        from: userEmail,
+        from: name,
         to: userEmail,
         subject: `Contact Form Submission ${name}`,
         html: `<p>Name: ${name}</p>
@@ -71,6 +71,7 @@ export default async (event, context) => {
                <p>Message: ${message}</p>`,
     };
 
+    console.log(mail);
 
     const nodemailer = await import("nodemailer");
 
@@ -91,6 +92,7 @@ export default async (event, context) => {
     });
 
     contactEmail.sendMail(mail, (error) => {
+        console.log("mesage sending");
         if (error) {
              return new Response(error.toString(), {
                 status: 500,
