@@ -37,8 +37,10 @@
   });
 });*/
 
-export default async (event, context) => {
-    const dotenv = await import("dotenv");
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+export default async function handler(event, context) {
     dotenv.config({ path: [".env", "../../.env"] });
 
     const userEmail = process.env.GMAIL_USER ? process.env.GMAIL_USER : Netlify.env.get("GMAIL_USER");
@@ -73,8 +75,6 @@ export default async (event, context) => {
 
     console.log(mail);
 
-    const nodemailer = await import("nodemailer");
-
     const contactEmail = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -91,22 +91,21 @@ export default async (event, context) => {
       }
     });
 
-    console.log("mesage sending");
+    console.log("message sending");
 
-    await contactEmail.sendMail(mail, (error) => {
-        console.log("mesage sending");
-        if (error) {
-             return new Response(error.toString(), {
-                status: 500,
-            })
-            //res.json({status: "ERROR"});
-        } else {
-            return new Response("Message sent", {
-                status: 200,
-            })
-            //res.json({ status: "Message Sent" });
-        }
-    });
+    try {
+        const info = await contactEmail.sendMail(mail);
+
+        return new Response("Message sent", {
+            status: 200,
+        })
+    }
+    catch (error) {
+        console.log(error);
+        return new Response(error.toString(), {
+            status: 500,
+        })
+    }
 }
 
 async function readStream(stream) {
