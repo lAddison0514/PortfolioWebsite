@@ -74,8 +74,11 @@ export default async (event, context) => {
             status: 400,
         })
     }
+    console.log(bodyContent);
 
     const eventBody = JSON.parse(bodyContent);
+
+    console.log(eventBody);
 
     const name = eventBody.name;
     const email = eventBody.email;
