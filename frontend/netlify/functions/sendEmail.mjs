@@ -12,9 +12,31 @@
   }
 }*/
 
+const dotenv = await import("dotenv");
+dotenv.config({ path: [".env", "../../.env"] });
+const nodemailer = await import("nodemailer");
 
+//const envLoaded = require('dotenv').config({ path: [".env", "../../.env"] });
+const contactEmail = nodemailer.createTransport({
+    service: 'gmail',
+    auth: !process.env.GMAIL_USER ? {
+            user: Netlify.env.get("GMAIL_USER"),
+            ass: Netlify.env.get("GMAIL_PASSWORD"),
+        }
+        :
+        {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASSWORD,
+        }
+    });
 
-
+contactEmail.verify((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Ready to Send");
+  }
+});
 
 /*router.post("/contact", (req, res) => {
   const name = req.body.name;
@@ -37,36 +59,12 @@
   });
 });*/
 
-import nodemailer from "nodemailer";
-
 export default async (event, context) => {
-    const envLoaded = require('dotenv').config({ path: [".env", "../../.env"] });
-
-    const nodemailer = require("nodemailer");
-    const contactEmail = nodemailer.createTransport({
-        service: 'gmail',
-        auth: envLoaded.error ? {
-                user: Netlify.env.get("GMAIL_USER"),
-                ass: Netlify.env.get("GMAIL_PASSWORD"),
-            }
-            :
-            {
-                user: process.env.GMAIL_USER,
-                pass: process.env.GMAIL_PASSWORD,
-            }
-        });
-
-    contactEmail.verify((error) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Ready to Send");
-      }
-    });
-
-    const name = event.body.name;
-    const email = event.body.email;
-    const message = event.body.message;
+    const body = await readStream(event.body);
+    const eventBody = JSON.parse(body);
+    const name = eventBody.name;
+    const email = eventBody.email;
+    const message = eventBody.message;
     const mail = {
         from: name,
         to: process.env.GMAIL_USER,
@@ -88,4 +86,19 @@ export default async (event, context) => {
             //res.json({ status: "Message Sent" });
         }
     });
+}
+
+async function readStream(stream) {
+  const reader = stream.getReader();
+  const decoder = new TextDecoder();
+  let result = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    result += decoder.decode(value, { stream: true });
+  }
+
+  result += decoder.decode(); // flush any remaining bytes
+  return result;
 }
