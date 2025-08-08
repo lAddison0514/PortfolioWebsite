@@ -63,7 +63,7 @@ export default async (event, context) => {
     const email = eventBody.email;
     const message = eventBody.message;
     const mail = {
-        from: name,
+        from: userEmail,
         to: userEmail,
         subject: `Contact Form Submission ${name}`,
         html: `<p>Name: ${name}</p>
@@ -90,6 +90,8 @@ export default async (event, context) => {
         console.log("Ready to Send");
       }
     });
+
+    console.log("mesage sending");
 
     contactEmail.sendMail(mail, (error) => {
         console.log("mesage sending");
