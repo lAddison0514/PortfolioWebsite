@@ -69,11 +69,10 @@ export default async (event, context) => {
       // Body is a ReadableStream (less common in Netlify)
       bodyContent = await readStream(event.body);
     } else {
-      // Body is in unexpected format
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Unsupported request body format" })
-      };
+        // Body is in unexpected format
+        return new Response("Unsupported request body format", {
+            status: 400,
+        })
     }
 
     const eventBody = JSON.parse(bodyContent);
