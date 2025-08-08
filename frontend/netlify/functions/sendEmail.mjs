@@ -60,8 +60,23 @@ contactEmail.verify((error) => {
 });*/
 
 export default async (event, context) => {
-    const body = await readStream(event.body);
-    const eventBody = JSON.parse(body);
+    let bodyContent;
+    if (typeof event.body === 'string') {
+      // Body is already a string (common in Netlify)
+      bodyContent = event.body;
+    } else if (event.body.getReader) {
+      // Body is a ReadableStream (less common in Netlify)
+      bodyContent = await readStream(event.body);
+    } else {
+      // Body is in unexpected format
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Unsupported request body format" })
+      };
+    }
+
+    const eventBody = JSON.parse(bodyContent);
+
     const name = eventBody.name;
     const email = eventBody.email;
     const message = eventBody.message;
