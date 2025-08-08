@@ -83,7 +83,7 @@ export default async (event, context) => {
         }
     });
 
-    contactEmail.verify((error) => {
+    await contactEmail.verify((error) => {
       if (error) {
         console.log(error);
       } else {
@@ -93,7 +93,7 @@ export default async (event, context) => {
 
     console.log("mesage sending");
 
-    contactEmail.sendMail(mail, (error) => {
+    await contactEmail.sendMail(mail, (error) => {
         console.log("mesage sending");
         if (error) {
              return new Response(error.toString(), {
