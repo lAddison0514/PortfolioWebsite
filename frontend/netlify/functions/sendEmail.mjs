@@ -12,31 +12,9 @@
   }
 }*/
 
-const dotenv = await import("dotenv");
-dotenv.config({ path: [".env", "../../.env"] });
-const nodemailer = await import("nodemailer");
+
 
 //const envLoaded = require('dotenv').config({ path: [".env", "../../.env"] });
-const contactEmail = nodemailer.createTransport({
-    service: 'gmail',
-    auth: !process.env.GMAIL_USER ? {
-            user: Netlify.env.get("GMAIL_USER"),
-            ass: Netlify.env.get("GMAIL_PASSWORD"),
-        }
-        :
-        {
-            user: process.env.GMAIL_USER,
-            pass: process.env.GMAIL_PASSWORD,
-        }
-    });
-
-contactEmail.verify((error) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Ready to Send");
-  }
-});
 
 /*router.post("/contact", (req, res) => {
   const name = req.body.name;
@@ -86,6 +64,10 @@ export default async (event, context) => {
                <p>Email: ${email}</p>
                <p>Message: ${message}</p>`,
     };
+
+    const dotenv = await import("dotenv");
+    dotenv.config({ path: [".env", "../../.env"] });
+    const nodemailer = await import("nodemailer");
 
     const contactEmail = nodemailer.createTransport({
     service: 'gmail',
