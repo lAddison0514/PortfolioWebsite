@@ -36,7 +36,12 @@ const Contact = () => {
         }).catch(error => console.log(error));
 
         setStatus("Submit");
-        alert(await response.status);
+
+        if(await response.status === 200) {
+            alert("Thank you for the message!");
+        } else {
+            alert("Error, message not sent.");
+        }
 
         document.getElementById("contactForm").reset();
     };

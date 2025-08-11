@@ -4,6 +4,10 @@ import {motion} from "motion/react";
 import {easeOut} from "framer-motion";
 import ModalVideoPlayer from "./ModalVideoPlayer.jsx";
 
+function HtmlRenderer({ htmlContent }) {
+  return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+}
+
 const PortfolioModal = ({modalOpen, backClicked, infoStruct}) => {
     return (
         <motion.div className="portfolioModal" variants={modalVariant} initial={"closed"} animate={modalOpen} exit={"closed"}>
@@ -24,9 +28,9 @@ const PortfolioModal = ({modalOpen, backClicked, infoStruct}) => {
                         )
                     }
                     <h1 className="modalDatesTech">{infoStruct.dates} | Tech: {infoStruct.techUsed}</h1>
-                    <p className={"modalText"}>
-                        {infoStruct.content}
-                    </p>
+                    <div className={"modalText"}>
+                        <HtmlRenderer htmlContent={infoStruct.content}/>
+                    </div>
                 </div>
 
                 <motion.button className="backButton" whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} onClick={backClicked}>BACK</motion.button>

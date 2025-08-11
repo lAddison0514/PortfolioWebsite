@@ -29,21 +29,24 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "T95dlP8smrM",//"imgs/portfolio/bugnauts_kickback_16_9.jpg",
         dates: "Aug 2024 - May 2025",
         techUsed: "UE5, Perforce",
-        content: "After Bugnauts was released as a demo through USC's Advanced Games Program, the Creative Director was contacted by an indie studio with the suggestion that we should pitch the game to them after putting in some work to redevelop it. We decided to take the opportunity to completely re-image what Bugnauts could be and rebuild it nearly from the ground up.\n" +
-            "\n" +
-            "I took lead on the design and engineering of this new demo and eventually we brought on extra members to aid with audio, art, UI, and design.\n" +
-            "\n" +
-            "While the project ultimately had to be sidelined due to difficulty coming back from the loss of my co-founder's house in the LA Wildfires, it was an incredible experience that allowed me to really flex both my engineering and design skills.\n" +
-            "\n" +
-            " \n" +
-            "\n" +
-            "Some of my favorite features to work on were:\n" +
-            "\n" +
-            "The Boss Fight: The demo's Ant Queen boss fight, which I developed all of from the engineering, to combat design, to cutscenes.\n" +
-            "\n" +
-            "The combat design: In the original demo we struggled with combat feeling flat. With this demo I tried to add more height and space to enemy placement and arena design to give combat more volume.\n" +
-            "\n" +
-            "The level design: We spent a lot of time developing the levels themselves. My push towards leaving behind the open world in place of set levels allowed us to play a lot more with verticality and hidden paths giving the levels a better sense of exploration."
+        content: "<p>After Bugnauts was released as a demo through USC's Advanced Games Program, we were contacted " +
+                    "by an indie publishing studio with the suggestion that we should pitch the game to them after putting " +
+                    "in some work to redevelop it. We decided to take the opportunity to completely re-image what Bugnauts could " +
+                    "be and rebuild it nearly from the ground up.</p>" +
+                "<p>I led the design and engineering of this new demo, and we eventually brought on extra members " +
+                    "to aid with audio, art, UI, and design. While the project ultimately had to be sidelined due to difficulty " +
+                    "coming back from the loss of my co-founder's house in the LA Wildfires, it was an incredible experience " +
+                    "that allowed me to flex both my engineering and design skills.</p>" +
+                "<p>Some of my favorite features to work on were:</p>" +
+                "<ul>" +
+                    "<li>The Boss Fight: The demo's Ant Queen boss fight, which I developed all of from the engineering, to " +
+                    "combat design, to cutscenes.</li>" +
+                    "<li>The combat design: In the original demo we struggled with combat feeling flat. With this demo I tried " +
+                    "to add more height and space to enemy placement and arena design to give combat more volume.</li>" +
+                    "<li>The level design: We spent a lot of time developing the levels themselves. My push towards leaving behind " +
+                    "the open world in place of set levels allowed us to play a lot more with verticality and hidden paths giving " +
+                    "the levels a better sense of exploration.</li>" +
+                "</ul>"
     },
     "usc_xr_lab" : {
         title: "USC XR Lab",
@@ -51,9 +54,16 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "imgs/portfolio/XRLab_logo_16_9.jpg",
         dates: "Mar 2024 - Jul 2024",
         techUsed: "Unity, Meta Quest",
-        content: "Developed parchment simulation for Unity by researching and implementing cloth simulation techniques.\n" +
-            "Managed the Unity project to improve the UI, UX, and control of the VR application.\n" +
-            "Collaborated with archeologists, historians, and designers to determine technical needs and help create an educational VR application that brings a 15th century manuscript to life."
+        content: "<p>During my time working with the Extended Reality Lab at USC, I worked on the NEH-supported project " +
+                    "Virtual Ancient Manuscript Exploration in Virtual Spaces under the Lab’s director Lynn Dodd. Our " +
+                    "goal with the round of funding that I joined the project during was to make a digital recreation " +
+                    "of a 15th century manuscript called the Book of Hours.</p>" +
+                "<p>I was brought on to the project to help the team transition away from the paid plugin they were " +
+                    "using to simulate the pages of the book. The initial direction we researched was cloth and softbody " +
+                    "physical simulation techniques, but we ultimately decided to use a rigged model of the book to better " +
+                    "deal with the hardware limitations of the VR headset.</p>" +
+                "<p>Outside the research and managing of the book simulation, I spent a lot of time working on UI UX " +
+            "       and quality control in Unity.</p>"
     },
     "zeromatter" : {
         title: "Zeromatter",
@@ -61,7 +71,14 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "imgs/portfolio/zeromatter_logo_16_9.jpg",
         dates: "May 2023 - Aug 2023",
         techUsed: "Rust, AWS, Github Actions, Docker",
-        content: "Took ownership of the company’s internal CI/CD pipeline using Rust, Github Actions, Docker and AWS to maintain, and expand the functionality of the merge-queue used by all engineers."
+        content: "<p>At <a href='https://zeromatter.com/'>Zeromatter</a> I got the amazing opportunity to join a small startup of 13 people and watch a product " +
+            "move from development to launching over the course of my 3 months working there. Even as an intern, I was " +
+            "given important tasks and the responsibility to build tools they are still using.</p>" +
+            "<p>I was brought on to take ownership of the internal CI/CD pipeline. There was a very primative merge queue" +
+            "in place, and over the courese of the summer it was my job to refactor and upgrade it to meet the growing " +
+            "needs of the company. In this process I got a ton of experience working with AWS, Github, and Docker to create " +
+            "a dynamic tool that surpassed the team's inital expectations!</p>"
+        //"Took ownership of the company’s internal CI/CD pipeline using Rust, Github Actions, Docker and AWS to maintain, and expand the functionality of the merge-queue used by all engineers."
     },
 
     "bugnauts_game" : {
@@ -70,7 +87,8 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "imgs/portfolio/bugnauts_game_16_9.avif",
         dates: "Mar 2023 - May 2024",
         techUsed: "UE5, Perforce",
-        content: "Bugnauts is a UE5 game being developed through USC's Advanced Games Program. I act as the Lead Engineer on a team of 40+ members where I lead a team of 5 other engineers and collaborate with various disciplines to bring the game from idea to launch."
+        content: '<p>paragraph 1</p> <p>paragraph 2</p>'
+        //"Bugnauts is a UE5 game being developed through USC's Advanced Games Program. I act as the Lead Engineer on a team of 40+ members where I lead a team of 5 other engineers and collaborate with various disciplines to bring the game from idea to launch."
     },
     "tale_of_toe" : {
         title: "Tale of Toe",
@@ -161,7 +179,11 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "imgs/portfolio/portfolio_website_16_9.jpg",
         dates: "July 2025",
         techUsed: "React",
-        content: "Through the process of being smart, silly, and another word starting with 's' I learned React and refreshed my web dev to create this website"
+        content: "<p>One of my most recent projects has been this website itself. I've always wanted to make my own portfolio " +
+                    "website, so I deceided to use this as an opportunity to refresh my web development skills and learn " +
+                    "React in the process. I used React with the Motion library to create the frontend, Node.js for the " +
+                    "contact page backend, and Netlify to host the site.</p>" +
+                "<p>The website code can be found <a href='https://github.com/lAddison0514/PortfolioWebsite'>here</a>!</p>"
     },
     "uscheduler" : {
         title: "USCheduler",
