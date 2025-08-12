@@ -14,6 +14,13 @@ export const EXPERIENCE_SECTION = [
         tech: "Unity, Quest 2"
     },
     {
+        title: "Course Producer (TA)",
+        dates: "Sept 2021 - May 2024",
+        imgLocation: "imgs/portfolio/usc_viterbi_16_9.jpg",
+        moreInfoID: "course_producer",
+        tech: "Docker, Git, C++"
+    },
+    {
         title: "Zeromatter",
         dates: "May 2023 - Aug 2023",
         imgLocation: "imgs/portfolio/zeromatter_logo_16_9.jpg",

@@ -65,6 +65,18 @@ export const PORTFOLIO_MORE_INFO_MAP = {
                 "<p>Outside the research and managing of the book simulation, I spent a lot of time working on UI UX " +
             "       and quality control in Unity.</p>"
     },
+    "course_producer" : {
+        title: "Course Producer (Undergraduate TA)",
+        isImg: true,
+        contentPath: "imgs/portfolio/usc_viterbi_16_9.jpg",
+        dates: "Sept 2021 - May 2024",
+        techUsed: "Docker, Git, C++",
+        content: "<p>From the fall of my sophomore year through the spring of my seinor, I worked as a TA at USC. The two " +
+                    "classes I helped teach in my time there were CSCI 104: Data Structures and Object-Oriented Design, and CSCI " +
+                    "170: Discreet Methods in Computer Science.</p>" +
+                "<p>In these classes I held office hours and ran labs that explored a wide range of topics and tools from " +
+                    "Git and Docker; AVL Trees and OOP; and Induction and other fundamentals of discreet mathematics! </p>"
+    },
     "zeromatter" : {
         title: "Zeromatter",
         isImg: true,
