@@ -117,7 +117,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
     },
 
     "pbd_physics_sim" : {
-        title: "PBD Physics Sim",
+        title: "PBD Cloth Physics",
         isImg: false,
         contentPath: "videos/PBDExploration.mp4",
         dates: "May 2025",
@@ -146,7 +146,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "videos/JelloCubeGIF.mp4",
         dates: "April 2023",
         techUsed: "OpenGL, C++",
-        content: "This simulation of a mass spring system simulates an interactive cube of Jello bouncing around various boundaries. It reacts to a user dragging it around the space, gravity, surface friction, and bounces off the walls of the active bounds. Rendered in Open GL."
+        content: "This program simulates a mass spring system representing a cube of Jello bouncing around various boundaries. It reacts to a user dragging it around the space, gravity, surface friction, and collisions."
     },
     "prime_engine" : {
         title: "Prime Engine Development",
@@ -157,7 +157,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         content: "Using Prime Engine, a game engine developed by Artem Kovalovs, I implemented various features including culling, physics, and a UI editor based on Unity's uGUI system that allows users to place buttons, images, & text in the world and hook them to Lua functions. "
     },
     "custom_engine" : {
-        title: "Custom Engine & Deferred Lighting",
+        title: "DX11 Engine with Deferred Lighting",
         isImg: false,
         contentPath: "videos/DirectXEngine.mp4",
         dates: "Jan 2023 - May 2023",
@@ -169,7 +169,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         isImg: false,
         contentPath: "videos/RayTracingRendererDemo.mp4",
         dates: "November 2022",
-        techUsed: "C++",
+        techUsed: "OpenGL, C++",
         content: "With OpenGL and C++ I created a simple raycast engine that can render scenes with triangles, spheres, and point lights and can handle shadows and reflections."
     },
 
@@ -190,7 +190,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         isImg: false,
         contentPath: "videos/201WebsiteDemo.mp4",
         dates: "Feb 2023 - Apr 2023",
-        techUsed: "Java, ...",
+        techUsed: "Java, HTML/CSS, SQL",
         content: "USCheduler is a website scheduling application I developed with other students. I designed and created the entire front end using HTML, CSS, and JavaScript. I also integrated it with a backend written in Java by other members of the team."
     },
 

@@ -9,6 +9,7 @@ const ExpandedCardInfo = ({cardInfo,  openModal}) => {
                 <motion.img variants={imgVariants} className="expandedFrontCardImg" src={cardInfo.imgLocation === "" ? "imgs/portfolio/temp_logo_16_9.jpg" : cardInfo.imgLocation} alt="" />
                 <h1 className="expandedFrontCardText expandedTitle">{cardInfo.title}</h1>
                 <h1 className="expandedFrontCardText expandedDates">{cardInfo.dates}</h1>
+                <h1 className="expandedFrontCardText expandedDates">Tech: {cardInfo.tech}</h1>
             </motion.div>
     )
 }

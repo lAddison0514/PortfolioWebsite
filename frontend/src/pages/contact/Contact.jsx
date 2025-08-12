@@ -70,7 +70,7 @@ const Contact = () => {
                 <h1 className={"contactHeader contactHere"}>Or contact me here!</h1>
 
                 <div className={"contactInfoDiv"}>
-                    <p style={{margin: "4px 10px"}}>Tel. (616) 745-1580 | addisonslouis@gmail.com | </p>
+                    <p style={{margin: "4px 10px"}}>addisonslouis@gmail.com | </p>
 
                     <a className={"linkedInLink"} target={"_blank"} href={"https://www.linkedin.com/in/louis-addison/"}> <FaLinkedin/> </a>
                 </div>

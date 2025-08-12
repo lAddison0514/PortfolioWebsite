@@ -12,6 +12,7 @@ const FrontCardInfo = ({cardInfo, animState, infoVariants, openModal}) => {
                 <motion.img variants={imgVariants} className="frontCardImg" src={cardInfo.imgLocation === "" ? "imgs/portfolio/temp_logo_16_9.jpg" : cardInfo.imgLocation} alt="" />
                 <h1 className="frontCardText" style={{fontSize: "32px"}}>{cardInfo.title}</h1>
                 <h1 className="frontCardText">{cardInfo.dates}</h1>
+                <h1 className="frontCardText">Tech: {cardInfo.tech}</h1>
             </motion.div>
         </motion.div>
     )
