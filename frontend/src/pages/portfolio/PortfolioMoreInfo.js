@@ -99,8 +99,7 @@ export const PORTFOLIO_MORE_INFO_MAP = {
         contentPath: "imgs/portfolio/bugnauts_game_16_9.avif",
         dates: "Mar 2023 - May 2024",
         techUsed: "UE5, Perforce",
-        content: '<p>paragraph 1</p> <p>paragraph 2</p>'
-        //"Bugnauts is a UE5 game being developed through USC's Advanced Games Program. I act as the Lead Engineer on a team of 40+ members where I lead a team of 5 other engineers and collaborate with various disciplines to bring the game from idea to launch."
+        content: "Bugnauts is a UE5 game being developed through USC's Advanced Games Program. I act as the Lead Engineer on a team of 40+ members where I lead a team of 5 other engineers and collaborate with various disciplines to bring the game from idea to launch."
     },
     "tale_of_toe" : {
         title: "Tale of Toe",
