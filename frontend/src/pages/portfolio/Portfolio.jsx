@@ -8,6 +8,7 @@ import {PortfolioMap} from "./PortfolioInfoMap.js"
 import {PORTFOLIO_MORE_INFO_MAP} from "./PortfolioMoreInfo.js";
 import {EXPERIENCE_SECTION, GAMES_SECTION, ENGINE_RENDERING_SECTION, MODELING_SECTION, WEB_DEV_SECTION} from "./PortfolioCardInfo.js";
 import {AnimatePresence, easeIn, easeOut} from "framer-motion";
+import { preloadPortfolioImages } from "./ImageCache.js";
 
 import {motion} from "motion/react";
 import {useEffect, useRef, useState} from "react";
@@ -20,6 +21,11 @@ const Portfolio = () => {
 
     // Manage forced swap between section types
     const [forceExpand, setForceExpand] = useState(false);
+
+    // Preload all portfolio images when component mounts
+    useEffect(() => {
+        preloadPortfolioImages();
+    }, []);
 
     useEffect(() => {
         const checkScreenSize = () => {
